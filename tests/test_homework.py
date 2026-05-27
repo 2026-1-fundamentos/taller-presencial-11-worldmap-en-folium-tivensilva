@@ -14,12 +14,12 @@ def test_01():
 
     #
     # Retorna error si la carpeta output/ no existe
-    if not os.path.exists("files/output/countries.csv"):
-        raise FileNotFoundError("File 'files/output/countries.csv' not found")
+    if not os.path.exists("files/countries.csv"):
+        raise FileNotFoundError("File 'files/countries.csv' not found")
 
     #
     # Lee el contenido del archivo output.txt
-    dataframe = pd.read_csv("files/output/countries.csv")
+    dataframe = pd.read_csv("files/countries.csv")
     dataframe = dataframe.set_index("countries")
 
     assert dataframe["count"]["United States of America"] == 579
